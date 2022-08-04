@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import useSWR from "swr";
+import { SearchBar } from "../components";
 import RecipeCard from "../components/home/RecipeCard";
 import { Cuisines } from "../constants/cuisineTypes";
 import { RandomRecipes } from "./api/search-random-recipes";
@@ -14,7 +15,8 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Grid container gap={2} justifyContent="center">
+      <SearchBar />
+      <Grid container gap={5} justifyContent="center">
         <Grid item>
           <RecipeCard />
         </Grid>

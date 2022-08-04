@@ -36,7 +36,6 @@ const Layout = ({ children }: LayoutProps) => {
                 </Typography>
               </Stack>
             </Link>
-            <SearchBar />
             {children}
           </Stack>
         </Container>

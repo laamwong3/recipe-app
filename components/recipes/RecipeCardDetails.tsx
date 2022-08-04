@@ -32,38 +32,38 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   }),
 }));
 
-const imageSize = 800;
+const imageSize = 600;
 
 export default function RecipeCardDetails() {
   const [expanded, setExpanded] = React.useState(false);
-  const theme = useTheme();
-  const matches = useMediaQuery((theme: Theme) => theme.breakpoints.up("sm"));
+  // const theme = useTheme();
+  // const matches = useMediaQuery((theme: Theme) => theme.breakpoints.up("sm"));
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  console.log(matches);
-  console.log(theme.breakpoints.values);
+  // console.log(matches);
+  // console.log(theme.breakpoints.values);
   return (
-    <Card sx={{ maxWidth: imageSize * 1.5, borderRadius: 3 }}>
+    <Card sx={{ maxWidth: imageSize * 2, borderRadius: 3, mb: 5 }}>
       <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
+        // avatar={
+        //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+        //     R
+        //   </Avatar>
+        // }
+        // action={
+        //   <IconButton aria-label="settings">
+        //     <MoreVertIcon />
+        //   </IconButton>
+        // }
         title="Shrimp and Chorizo Paella"
         subheader="September 14, 2016"
       />
       <Image
         src={"https://spoonacular.com/recipeImages/649977-556x370.jpg"}
         height={imageSize}
-        width={imageSize * 1.5}
+        width={imageSize * 2}
         objectFit="cover"
       />
       <CardContent>
@@ -74,12 +74,12 @@ export default function RecipeCardDetails() {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        {/* <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
         <IconButton aria-label="share">
           <ShareIcon />
-        </IconButton>
+        </IconButton> */}
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
