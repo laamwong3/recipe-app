@@ -1,8 +1,15 @@
+import { Stack } from "@mui/material";
 import { NextPage } from "next";
-import React from "react";
+import RecipeCardDetails from "../../components/recipes/RecipeCardDetails";
 
 const Recipe: NextPage = () => {
-  return <div>Recipe</div>;
+  return (
+    <>
+      <Stack direction={"row"} justifyContent="center">
+        <RecipeCardDetails />
+      </Stack>
+    </>
+  );
 };
 
 export default Recipe;

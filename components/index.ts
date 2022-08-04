@@ -1,3 +1,4 @@
 import Layout from "./layout/Layout";
+import SearchBar from "./layout/SearchBar";
 
-export { Layout };
+export { SearchBar, Layout };
