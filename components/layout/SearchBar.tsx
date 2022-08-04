@@ -5,8 +5,8 @@ import { useInput } from "../../contexts/InputContext";
 
 const SearchBar = () => {
   const { cuisine, keyword, setCuisine, setKeyword } = useInput();
-  console.log(keyword);
-  console.log(cuisine);
+  // console.log(keyword);
+  // console.log(cuisine);
   return (
     <>
       <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 2, md: 0 }}>
