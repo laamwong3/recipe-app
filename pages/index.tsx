@@ -7,13 +7,15 @@ import { SearchBar } from "../components";
 import RecipeCard from "../components/home/RecipeCard";
 import { Cuisines } from "../constants/cuisineTypes";
 import { RandomRecipes } from "./api/search-random-recipes";
-import fs from "fs";
+import { useEffect } from "react";
 
 const Home: NextPage = () => {
   const tags: Cuisines = "Chinese";
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data } = useSWR<RandomRecipes>(`/api/search-random-recipes`, fetcher);
   console.log(data);
+
+  useEffect(() => {}, [data]);
   return (
     <>
       <SearchBar />
