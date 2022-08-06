@@ -21,7 +21,7 @@ const Layout = ({ children }: LayoutProps) => {
     <>
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
-        <Container maxWidth="lg">
+        <Container maxWidth="xl">
           <Stack direction="column" gap={5}>
             <Link href={"/"}>
               <Stack direction={"row"} justifyContent={"center"}>

@@ -16,6 +16,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Image from "next/image";
 import { Theme, useMediaQuery, useTheme } from "@mui/material";
+import randomRecipes from "../../constants/randomRecipes.json";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -34,14 +35,26 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 
 const imageSize = 600;
 
-export default function RecipeCardDetails() {
+interface RecipeCardDetailsProps {
+  id: string | string[] | undefined;
+}
+type RandomRecipes = typeof randomRecipes.recipes[0];
+export default function RecipeCardDetails({ id }: RecipeCardDetailsProps) {
   const [expanded, setExpanded] = React.useState(false);
+  const [details, setDetails] = React.useState<RandomRecipes>();
   // const theme = useTheme();
   // const matches = useMediaQuery((theme: Theme) => theme.breakpoints.up("sm"));
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  console.log(details);
+  React.useEffect(() => {
+    const tempDetails = randomRecipes.recipes.filter(
+      (data) => data.id.toString() === id
+    );
+    setDetails(tempDetails[0]);
+  }, []);
   // console.log(matches);
   // console.log(theme.breakpoints.values);
   return (
@@ -57,21 +70,21 @@ export default function RecipeCardDetails() {
         //     <MoreVertIcon />
         //   </IconButton>
         // }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={details?.title}
       />
       <Image
-        src={"https://spoonacular.com/recipeImages/649977-556x370.jpg"}
+        src={details?.image ?? ""}
         height={imageSize}
         width={imageSize * 2}
         objectFit="cover"
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
-        </Typography>
+        <Typography
+          variant="subtitle1"
+          color="text.secondary"
+          component={"div"}
+          dangerouslySetInnerHTML={{ __html: details?.summary ?? "" }}
+        ></Typography>
       </CardContent>
       <CardActions disableSpacing>
         {/* <IconButton aria-label="add to favorites">
