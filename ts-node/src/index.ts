@@ -24,7 +24,7 @@ const fetchRecipeInfo = () => {
     const url = `https://api.spoonacular.com/recipes/${each.id}/information?apiKey=${process.env.NEXT_PUBLIC_RECIPE_API_KEY}&includeNutrition=false`;
     fetch(url)
       .then((res) => res.json())
-      .then((data) => tempArr.push())
+      .then((data) => {})
       .catch((e) => console.log(e));
   });
 };
