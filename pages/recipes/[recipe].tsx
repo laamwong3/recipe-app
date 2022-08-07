@@ -5,7 +5,7 @@ import RecipeCardDetails from "../../components/recipes/RecipeCardDetails";
 
 const Recipe: NextPage = () => {
   const router = useRouter();
-  console.log(router.query.recipe);
+  // console.log(router.query.recipe);
   return (
     <>
       <Stack direction={"row"} justifyContent="center">

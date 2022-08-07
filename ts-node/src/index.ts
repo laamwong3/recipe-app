@@ -104,6 +104,7 @@ const fetchRecipesDtails = async () => {
   // await fetchRecipeInfo();
   // setToMap();
   const start = performance.now();
+  await fetchRandomRecipes();
   await fetchRecipesDtails();
   const end = performance.now();
   console.log(end - start);

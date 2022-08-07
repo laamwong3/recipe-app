@@ -17,7 +17,7 @@ const imageSize = 200;
 
 export default function RecipeCard({ recipe }: RecipeCardProps) {
   const router = useRouter();
-  console.log(recipe);
+  // console.log(recipe);
   return (
     <Card
       sx={{
